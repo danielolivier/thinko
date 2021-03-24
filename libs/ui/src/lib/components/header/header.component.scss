@@ -1,0 +1,49 @@
+@import '/apps/frontend/src/styles/colors';
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  height: 90px;
+
+  padding: 10px 25px;
+  background-color: $color-secondary;
+  z-index: 999;
+
+  .title {
+    margin-left: 20px;
+
+    span {
+      color: $color-primary;
+      font-size: 36px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      line-height: 54px;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+    border-radius: 30px;
+    margin: 10px;
+
+    cursor: pointer;
+    background-color: $color-primary;
+    box-shadow: 0px 10px 5px -3px #3b3b3b8c;
+
+    mat-icon {
+      width: 27.5px;
+      height: 27.5px;
+      font-size: 27.5px;
+      color: $color-secondary;
+    }
+
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+}

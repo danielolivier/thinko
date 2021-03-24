@@ -1,0 +1,10 @@
+{
+  "CARDS": {
+    "TITLE": "Cards",
+    "HEADER": {
+      "MENU": "Menu",
+      "SETTINGS": "Settings",
+      "LOGOUT": "Log out"
+    }
+  }
+}

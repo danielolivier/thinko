@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <div class="title">
+    <span>
+      {{ 'CARDS.TITLE' | transloco }}
+    </span>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <div class="item" [matTooltip]="'CARDS.HEADER.MENU' | transloco">
+      <mat-icon class="material-icons-round">view_module</mat-icon>
+    </div>
+    <div class="item" [matTooltip]="'CARDS.HEADER.SETTINGS' | transloco">
+      <mat-icon class="material-icons-round">settings</mat-icon>
+    </div>
+    <div class="item" [matTooltip]="'CARDS.HEADER.LOGOUT' | transloco">
+      <mat-icon class="material-icons-round">logout</mat-icon>
+    </div>
+  </div>
+</mat-toolbar>
