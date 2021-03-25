@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 
 import { AppComponent } from './app.component';
+import { NotFoundComponent } from 'libs/ui/src/lib/components/not-found/not-found.component';
 
 /**
  * Routes config
@@ -16,6 +17,14 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () =>
       import('./+tarjetas/tarjetas.module').then((m) => m.TarjetasModule),
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
   },
 ];
 

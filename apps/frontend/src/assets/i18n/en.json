@@ -1,10 +1,48 @@
 {
   "CARDS": {
     "TITLE": "Cards",
-    "HEADER": {
-      "MENU": "Menu",
-      "SETTINGS": "Settings",
-      "LOGOUT": "Log out"
+    "SYLLABUS": "Course syllabus"
+  },
+  "HEADER": {
+    "MENU": "Menu",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Log out"
+  },
+  "SETTINGS": {
+    "TITLE": "Settings",
+    "LANGS": {
+      "TITLE": "Languagee",
+      "ES": "Spanish",
+      "EN": "English"
+    },
+    "COURSES": {
+      "TITLE": "Course"
+    },
+    "SAVE": "Save changes",
+    "CANCEL": "Exit without saving"
+  },
+  "MINICARDS": {
+    "1": "1st Trimester",
+    "2": "2nd Trimester",
+    "3": "3rd Trimester"
+  },
+  "DETAIL": {
+    "BACK": "Back",
+    "SESSIONS": {
+      "1": "Sessions of 1st trimester",
+      "2": "Sessions of 2nd trimester",
+      "3": "Sessions of 3rd trimester"
     }
+  },
+  "DIALOG": {
+    "TITLE": "Before starting...",
+    "AUDIO": "Please make sure <b>audio is enabled</b>.",
+    "TIME": "Bits are played automatically <b>every 2 seconds</b>.",
+    "PAUSE": "You can stop presentation with <b>space bar</b> or by <b>clicking screen</b>.",
+    "START": "Start presentation"
+  },
+  "SHARED": {
+    "NOT_FOUND": "Page not found",
+    "BACK": "Go back"
   }
 }

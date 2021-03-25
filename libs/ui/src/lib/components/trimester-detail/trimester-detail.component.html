@@ -1,0 +1,13 @@
+<mat-card>
+  <div class="header">
+    <span class="title">
+      {{ 'DETAIL.SESSIONS.' + title | transloco }}
+    </span>
+    <span fxFlex></span>
+    <div class="tag">
+      <span> {{ '25' }} / {{ '50' }} </span>
+    </div>
+  </div>
+  <hr />
+  <button (click)="openDialog.emit()"></button>
+</mat-card>

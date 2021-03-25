@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="title">
+    <span>{{ 'DIALOG.TITLE' | transloco }}</span>
+  </div>
+  <div class="content">
+    <div class="info">
+      <div class="icon">
+        <mat-icon class="material-icons-round">volume_up</mat-icon>
+        <p [innerHTML]="'DIALOG.AUDIO' | transloco"></p>
+      </div>
+      <div class="icon">
+        <mat-icon class="material-icons-round">timer</mat-icon>
+        <p [innerHTML]="'DIALOG.TIME' | transloco"></p>
+      </div>
+      <div class="icon">
+        <mat-icon class="material-icons-round">pause</mat-icon>
+        <p [innerHTML]="'DIALOG.PAUSE' | transloco"></p>
+      </div>
+    </div>
+    <div class="button">
+      <button>
+        <mat-icon>play_arrow</mat-icon>
+        <span>{{ 'DIALOG.START' | transloco }}</span>
+      </button>
+    </div>
+  </div>
+</div>

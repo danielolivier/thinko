@@ -1,1 +1,11 @@
-<thinko-header></thinko-header>
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" [mode]="'over'" [position]="'end'" #sidenav>
+    <thinko-settings (closeSettings)="sidenav.close()"></thinko-settings>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <thinko-header (toggleSettings)="sidenav.open()"></thinko-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

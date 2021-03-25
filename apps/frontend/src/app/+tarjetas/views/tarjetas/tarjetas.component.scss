@@ -1,0 +1,11 @@
+mat-sidenav-container {
+  height: 100%;
+}
+
+:host ::ng-deep {
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: #3b3b3b;
+    opacity: 50%;
+    filter: blur(8px);
+  }
+}

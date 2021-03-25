@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="header">
+    <mat-icon class="material-icons-round" (click)="closeSettings.emit()"
+      >keyboard_backspace</mat-icon
+    >
+    <span>{{ 'SETTINGS.TITLE' | transloco }}</span>
+  </div>
+  <div class="content">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'SETTINGS.LANGS.TITLE' | transloco }}</mat-label>
+      <mat-select [(value)]="activeLang" disableOptionCentering>
+        <ng-container *ngFor="let lang of availableLangs">
+          <mat-option [value]="lang" (click)="setActiveLang(lang)">{{
+            'SETTINGS.LANGS.' + lang.toUpperCase() | transloco
+          }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="margin">
+      <mat-label>{{ 'SETTINGS.COURSES.TITLE' | transloco }}</mat-label>
+      <mat-select [(value)]="activeLang" disableOptionCentering>
+        <ng-container *ngFor="let lang of availableLangs">
+          <mat-option [value]="lang" (click)="setActiveLang(lang)">{{
+            'SETTINGS.LANGS.' + lang.toUpperCase() | transloco
+          }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <span fxFlex></span>
+    <button class="save-button">
+      <span>{{ 'SETTINGS.SAVE' | transloco }}</span>
+    </button>
+    <button class="cancel-button" (click)="closeSettings.emit()">
+      <span>{{ 'SETTINGS.CANCEL' | transloco }}</span>
+    </button>
+  </div>
+</div>

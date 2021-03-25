@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@thinko/ui": ["libs/ui/src/index.ts"]
+      "@thinko/ui": ["libs/ui/src/index.ts"],
+      "@thinko/rest-api": ["libs/rest-api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

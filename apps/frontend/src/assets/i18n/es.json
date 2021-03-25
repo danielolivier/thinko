@@ -1,10 +1,48 @@
 {
   "CARDS": {
     "TITLE": "Tarjetas",
-    "HEADER": {
-      "MENU": "Menú",
-      "SETTINGS": "Ajustes",
-      "LOGOUT": "Cerrar sesión"
+    "SYLLABUS": "Temario"
+  },
+  "HEADER": {
+    "MENU": "Menú",
+    "SETTINGS": "Configuración",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "SETTINGS": {
+    "TITLE": "Configuración",
+    "LANGS": {
+      "TITLE": "Idioma",
+      "ES": "Español",
+      "EN": "Inglés"
+    },
+    "COURSES": {
+      "TITLE": "Curso"
+    },
+    "SAVE": "Guardar cambios",
+    "CANCEL": "Cerrar sin guardar"
+  },
+  "MINICARDS": {
+    "1": "1º Trimestre",
+    "2": "2º Trimestre",
+    "3": "3º Trimestre"
+  },
+  "DETAIL": {
+    "BACK": "Atrás",
+    "SESSIONS": {
+      "1": "Sesiones del 1º trimestre",
+      "2": "Sesiones del 2º trimestre",
+      "3": "Sesiones del 3º trimestre"
     }
+  },
+  "DIALOG": {
+    "TITLE": "Antes de empezar...",
+    "AUDIO": "Asegúrate de tener el <b>volumen activado</b>.",
+    "TIME": "Los bits pasan automáticamente <b>cada 2 segundos</b>.",
+    "PAUSE": "Puedes detener el pase con la <b>barra espaciadora</b> o haciendo <b>clic en la pantalla</b>.",
+    "START": "Empezar pase"
+  },
+  "SHARED": {
+    "NOT_FOUND": "Página no encontrada",
+    "BACK": "Volver"
   }
 }

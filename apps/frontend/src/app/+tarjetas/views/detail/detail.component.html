@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <mat-icon class="mat-icons-rounded" (click)="goToHomepage()"
+      >keyboard_backspace</mat-icon
+    >
+    <span>{{ 'DETAIL.BACK' | transloco }}</span>
+  </div>
+  <div class="content">
+    <thinko-mini-info-card [title]="'2'"></thinko-mini-info-card>
+    <thinko-trimester-detail
+      [title]="'2'"
+      (openDialog)="onOpenDialog()"
+    ></thinko-trimester-detail>
+  </div>
+</div>

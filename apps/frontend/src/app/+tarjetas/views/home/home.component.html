@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="syllabus">
+    <div class="title">
+      <span>{{ 'CARDS.SYLLABUS' | transloco }}</span>
+    </div>
+    <div class="mini-cards">
+      <ng-container *ngFor="let obj of [1, 2, 3]">
+        <thinko-mini-info-card [title]="obj"></thinko-mini-info-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

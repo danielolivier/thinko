@@ -167,6 +167,31 @@
           }
         }
       }
+    },
+    "rest-api": {
+      "projectType": "library",
+      "root": "libs/rest-api",
+      "sourceRoot": "libs/rest-api/src",
+      "prefix": "thinko",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/rest-api/src/**/*.ts",
+              "libs/rest-api/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/rest-api"],
+          "options": {
+            "jestConfig": "libs/rest-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
