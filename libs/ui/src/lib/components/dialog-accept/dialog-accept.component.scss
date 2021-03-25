@@ -68,6 +68,7 @@
 
         width: 220px;
         height: 50px;
+        cursor: pointer;
 
         background-color: $color-accent;
         border: none;
@@ -76,6 +77,10 @@
 
         &:focus {
           outline: none;
+        }
+
+        &:hover {
+          box-shadow: none;
         }
 
         mat-icon {

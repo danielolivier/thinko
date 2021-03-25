@@ -8,7 +8,7 @@
   <div class="content">
     <mat-form-field appearance="fill">
       <mat-label>{{ 'SETTINGS.LANGS.TITLE' | transloco }}</mat-label>
-      <mat-select [(value)]="activeLang" disableOptionCentering>
+      <mat-select [(ngModel)]="activeLang" disableOptionCentering>
         <ng-container *ngFor="let lang of availableLangs">
           <mat-option [value]="lang" (click)="setActiveLang(lang)">{{
             'SETTINGS.LANGS.' + lang.toUpperCase() | transloco
@@ -18,10 +18,10 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="margin">
       <mat-label>{{ 'SETTINGS.COURSES.TITLE' | transloco }}</mat-label>
-      <mat-select [(value)]="activeLang" disableOptionCentering>
-        <ng-container *ngFor="let lang of availableLangs">
-          <mat-option [value]="lang" (click)="setActiveLang(lang)">{{
-            'SETTINGS.LANGS.' + lang.toUpperCase() | transloco
+      <mat-select [(ngModel)]="activeCourse" disableOptionCentering>
+        <ng-container *ngFor="let course of courses">
+          <mat-option [value]="course">{{
+            activeLang === 'es' ? course.name : course.nameEnglish
           }}</mat-option>
         </ng-container>
       </mat-select>

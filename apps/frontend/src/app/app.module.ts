@@ -8,6 +8,8 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from 'libs/ui/src/lib/components/not-found/not-found.component';
+import { RestApiModule } from '@thinko/rest-api';
+import { environment } from '../environments/environment';
 
 /**
  * Routes config
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     TranslocoRootModule,
     RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'top' }),
+    RestApiModule.forRoot({ baseUrl: environment.baseUrl }),
   ],
   providers: [],
   bootstrap: [AppComponent],

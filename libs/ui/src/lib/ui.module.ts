@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,6 +31,8 @@ import { DialogAcceptComponent } from './components/dialog-accept/dialog-accept.
     MatCardModule,
     MatDialogModule,
     TranslocoModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   declarations: [
     HeaderComponent,
