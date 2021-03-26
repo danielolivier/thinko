@@ -5,9 +5,61 @@
     </span>
     <span fxFlex></span>
     <div class="tag">
-      <span> {{ '25' }} / {{ '50' }} </span>
+      <span> {{ seenSessions.length }} / {{ trimesterSessions.length }} </span>
     </div>
   </div>
   <hr />
-  <button (click)="openDialog.emit()"></button>
+  <div class="content">
+    <ng-container *ngFor="let session of trimesterSessions; index as i">
+      <div
+        class="session"
+        [class.selected]="activeSession === session"
+        *ngIf="session.trimester == title"
+      >
+        <div style="flex-grow: 100" (click)="activeSession = session">
+          <span class="index">
+            {{ i + 1 }}
+          </span>
+          <span class="name">
+            {{
+              _translocoService.getActiveLang() === 'es'
+                ? session.name
+                : session.nameEnglish
+            }}
+          </span>
+        </div>
+        <span fxFlex></span>
+        <div *ngIf="activeSession !== session">
+          <ng-container *ngIf="session.seen; else noSeenTemplate">
+            <mat-icon
+              class="material-icons-round"
+              (click)="seenSession(session, false)"
+              >visibility</mat-icon
+            >
+          </ng-container>
+          <ng-template #noSeenTemplate>
+            <mat-icon
+              class="material-icons-round"
+              style="color: #e0e0e0"
+              (click)="seenSession(session, true)"
+              >visibility_off</mat-icon
+            >
+          </ng-template>
+        </div>
+        <div *ngIf="activeSession === session">
+          <mat-icon
+            class="material-icons-round white"
+            [matTooltip]="'SHARED.SHUFFLE' | transloco"
+            >shuffle</mat-icon
+          >
+          <mat-icons
+            class="material-icons-round white"
+            [matTooltip]="'SHARED.PLAY' | transloco"
+            (click)="openDialog.emit()"
+            >smart_display</mat-icons
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </mat-card>

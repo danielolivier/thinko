@@ -1,7 +1,10 @@
 {
   "CARDS": {
     "TITLE": "Cards",
-    "SYLLABUS": "Course syllabus"
+    "SYLLABUS": "Course syllabus",
+    "CONTINUE": "Back where you left",
+    "ORDERED_PLAY": "Ordered reproduction",
+    "NEXT_SESSION": "Next session"
   },
   "HEADER": {
     "MENU": "Menu",
@@ -43,6 +46,12 @@
   },
   "SHARED": {
     "NOT_FOUND": "Page not found",
-    "BACK": "Go back"
-  }
+    "BACK": "Go back",
+    "SHUFFLE": "Shuffle",
+    "PLAY": "Play",
+    "NO_DATA": "Please, select a course from <i>Settings</i> at header",
+    "GUARD_MESSAGE": "Select a course to enter this page",
+    "GOT_IT": "Got it!"
+  },
+  "MESSAGE": "If you click, you'll go back to main menu!"
 }

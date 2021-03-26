@@ -1,10 +1,19 @@
-<mat-card>
+<mat-card (click)="clickable ? onClick.emit() : null">
   <div class="content">
     <div class="title">
       <span>
         {{ 'MINICARDS.' + title | transloco }}
       </span>
     </div>
+    <div class="seen">
+      <span>
+        {{ seenSessions.length + ' / ' + sessions.length }}
+      </span>
+    </div>
   </div>
-  <div class="progress"></div>
+  <div class="progress">
+    <circle-progress
+      [percent]="(seenSessions.length / sessions.length) * 100"
+    ></circle-progress>
+  </div>
 </mat-card>

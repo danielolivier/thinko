@@ -140,7 +140,7 @@
     background-color: transparent;
   }
 
-  .mat-option.mat-active::after {
+  .mat-option.mat-selected::after {
     content: '';
     position: absolute;
     left: 0;

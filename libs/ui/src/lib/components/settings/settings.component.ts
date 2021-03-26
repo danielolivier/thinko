@@ -7,8 +7,11 @@ import {
 } from '@angular/core';
 import { AvailableLangs, TranslocoService } from '@ngneat/transloco';
 import { CoursesService } from 'libs/rest-api/src/lib/services/courses/courses.service';
+import { SessionsService } from 'libs/rest-api/src/lib/services/sessions/sessions.service';
 import { Subscription } from 'rxjs';
 import { Course } from '../../models/course/course';
+import { EventHandlerService } from 'libs/rest-api/src/lib/services/event-handler/event-handler.service';
+import { clone, isEqual } from 'lodash';
 
 @Component({
   selector: 'thinko-settings',
@@ -23,32 +26,63 @@ export class SettingsComponent implements OnInit, OnDestroy {
   public availableLangs: AvailableLangs;
   public activeCourse: Course;
   public courses: Array<Course>;
+  private lastLangSelected: string;
+  private lastCourseSelected: Course;
 
   private _subscriptions: Array<Subscription> = [];
 
   constructor(
-    private _translocoService: TranslocoService,
-    private coursesService: CoursesService
+    public _translocoService: TranslocoService,
+    private coursesService: CoursesService,
+    private sessionsService: SessionsService,
+    private eventHandlerService: EventHandlerService
   ) {}
 
   ngOnInit(): void {
     this.activeLang = this._translocoService.getActiveLang();
+    this.lastLangSelected = clone(this.activeLang);
+    this.lastCourseSelected = clone(this.activeCourse);
     this.availableLangs = this._translocoService.getAvailableLangs();
 
     this._subscriptions.push(
       this.coursesService.getCourses().subscribe((courses) => {
-        this.activeCourse = courses[0]; // We'll set course with id=1 as default chosen
-        this.coursesService._courseSelected.next(this.activeCourse);
         this.courses = courses;
+      })
+    );
+
+    this._subscriptions.push(
+      this.eventHandlerService.onSidenavClosed.subscribe((isSidenavClosed) => {
+        if (isSidenavClosed) this.restoreValues();
       })
     );
   }
 
-  public setActiveLang(lang: string): void {
-    this._translocoService.setActiveLang(lang);
+  public saveChanges(): void {
+    this.lastLangSelected = clone(this.activeLang);
+    this.lastCourseSelected = clone(this.activeCourse);
+
+    this._translocoService.setActiveLang(this.activeLang);
+
+    if (this.activeCourse) {
+      this.coursesService._courseSelected.next(this.activeCourse);
+
+      this._subscriptions.push(
+        this.sessionsService
+          .getSessionsByCourse(this.activeCourse.id)
+          .subscribe((sessions) => {
+            this.sessionsService._sessionsByCourse.next(sessions);
+          })
+      );
+    }
   }
 
-  public saveChanges(): void {}
+  private restoreValues(): void {
+    if (this.activeLang != this.lastLangSelected)
+      this.activeLang = clone(this.lastLangSelected);
+    if (!isEqual(this.activeCourse, this.lastCourseSelected)) {
+      this.activeCourse = clone(this.lastCourseSelected);
+    }
+  }
 
   ngOnDestroy(): void {
     this._subscriptions.forEach((sub) => sub.unsubscribe());

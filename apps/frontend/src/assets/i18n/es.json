@@ -1,7 +1,10 @@
 {
   "CARDS": {
     "TITLE": "Tarjetas",
-    "SYLLABUS": "Temario"
+    "SYLLABUS": "Temario",
+    "CONTINUE": "Vuelve donde lo dejaste",
+    "ORDERED_PLAY": "Reproducción ordenada",
+    "NEXT_SESSION": "Siguiente sesión"
   },
   "HEADER": {
     "MENU": "Menú",
@@ -43,6 +46,12 @@
   },
   "SHARED": {
     "NOT_FOUND": "Página no encontrada",
-    "BACK": "Volver"
-  }
+    "BACK": "Volver",
+    "SHUFFLE": "Aleatorio",
+    "PLAY": "Reproducir",
+    "NO_DATA": "Por favor, selecciona el curso deseado desde <i>Configuración</i> en la cabecera",
+    "GUARD_MESSAGE": "Selecciona un curso para acceder a esa página",
+    "GOT_IT": "Entendido!"
+  },
+  "MESSAGE": "Si haces clic, vuelves al menu principal!"
 }

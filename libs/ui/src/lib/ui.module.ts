@@ -18,6 +18,7 @@ import { MiniInfoCardComponent } from './components/mini-info-card/mini-info-car
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TrimesterDetailComponent } from './components/trimester-detail/trimester-detail.component';
 import { DialogAcceptComponent } from './components/dialog-accept/dialog-accept.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   imports: [
@@ -33,6 +34,20 @@ import { DialogAcceptComponent } from './components/dialog-accept/dialog-accept.
     TranslocoModule,
     ReactiveFormsModule,
     FormsModule,
+    NgCircleProgressModule.forRoot({
+      backgroundColor: '#ED993F',
+      showSubtitle: false,
+      radius: 100,
+      outerStrokeWidth: 10,
+      innerStrokeColor: '#ffffff',
+      outerStrokeColor: '#ffffff',
+      titleColor: '#ffffff',
+      unitsColor: '#ffffff',
+      showInnerStroke: false,
+      responsive: true,
+      titleFontSize: '50',
+      unitsFontSize: '40',
+    }),
   ],
   declarations: [
     HeaderComponent,

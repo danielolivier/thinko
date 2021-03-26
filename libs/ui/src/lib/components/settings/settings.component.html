@@ -10,7 +10,7 @@
       <mat-label>{{ 'SETTINGS.LANGS.TITLE' | transloco }}</mat-label>
       <mat-select [(ngModel)]="activeLang" disableOptionCentering>
         <ng-container *ngFor="let lang of availableLangs">
-          <mat-option [value]="lang" (click)="setActiveLang(lang)">{{
+          <mat-option [value]="lang">{{
             'SETTINGS.LANGS.' + lang.toUpperCase() | transloco
           }}</mat-option>
         </ng-container>
@@ -21,13 +21,15 @@
       <mat-select [(ngModel)]="activeCourse" disableOptionCentering>
         <ng-container *ngFor="let course of courses">
           <mat-option [value]="course">{{
-            activeLang === 'es' ? course.name : course.nameEnglish
+            _translocoService.getActiveLang() === 'es'
+              ? course.name
+              : course.nameEnglish
           }}</mat-option>
         </ng-container>
       </mat-select>
     </mat-form-field>
     <span fxFlex></span>
-    <button class="save-button">
+    <button class="save-button" (click)="saveChanges()">
       <span>{{ 'SETTINGS.SAVE' | transloco }}</span>
     </button>
     <button class="cancel-button" (click)="closeSettings.emit()">

@@ -47,6 +47,28 @@ body {
   background-color: $color-background;
 }
 
+::-webkit-scrollbar {
+  background: transparent !important;
+  height: 7.5px;
+  width: 7.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c8c8c8;
+  border-radius: 3.75px;
+}
+
 .mat-drawer-container {
   background-color: $color-background;
+}
+
+.error {
+  background-color: $color-accent;
+
+  button,
+  span {
+    color: $color-primary;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
 }

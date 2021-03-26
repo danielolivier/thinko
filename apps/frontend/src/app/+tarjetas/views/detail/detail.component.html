@@ -5,11 +5,19 @@
     >
     <span>{{ 'DETAIL.BACK' | transloco }}</span>
   </div>
-  <div class="content">
-    <thinko-mini-info-card [title]="'2'"></thinko-mini-info-card>
-    <thinko-trimester-detail
-      [title]="'2'"
-      (openDialog)="onOpenDialog()"
-    ></thinko-trimester-detail>
-  </div>
+  <ng-container *ngIf="sessions | async; let sessions">
+    <ng-container *ngIf="trimesterSessions | async; let trimesterSessions">
+      <div class="content">
+        <thinko-mini-info-card
+          [title]="trimesterId"
+          [sessions]="trimesterSessions"
+        ></thinko-mini-info-card>
+        <thinko-trimester-detail
+          [title]="trimesterId"
+          [sessions]="sessions"
+          (openDialog)="onOpenDialog()"
+        ></thinko-trimester-detail>
+      </div>
+    </ng-container>
+  </ng-container>
 </div>

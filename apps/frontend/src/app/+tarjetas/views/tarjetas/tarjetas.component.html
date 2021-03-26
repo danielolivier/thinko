@@ -1,5 +1,11 @@
 <mat-sidenav-container>
-  <mat-sidenav class="sidenav" [mode]="'over'" [position]="'end'" #sidenav>
+  <mat-sidenav
+    class="sidenav"
+    [mode]="'over'"
+    [position]="'end'"
+    #sidenav
+    (closedStart)="eventHandlerService._onSidenavClose.next(true)"
+  >
     <thinko-settings (closeSettings)="sidenav.close()"></thinko-settings>
   </mat-sidenav>
   <mat-sidenav-content>

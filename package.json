@@ -43,6 +43,7 @@
     "@ngneat/transloco": "^2.20.1",
     "@nrwl/angular": "11.5.2",
     "lodash": "^4.17.21",
+    "ng-circle-progress": "^1.6.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"

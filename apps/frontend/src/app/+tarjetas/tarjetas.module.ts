@@ -4,7 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
 
+import { IsCourseGuard, RestApiModule } from '@thinko/rest-api';
 import { UiModule } from '@thinko/ui';
 import { TranslocoModule } from '@ngneat/transloco';
 
@@ -22,7 +24,8 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'detail',
+        path: ':trimesterId/detail',
+        canActivate: [IsCourseGuard],
         component: DetailComponent,
       },
       {
@@ -43,6 +46,7 @@ const routes: Routes = [
     TranslocoModule,
     MatSidenavModule,
     MatIconModule,
+    MatCardModule,
   ],
 })
 export class TarjetasModule {}

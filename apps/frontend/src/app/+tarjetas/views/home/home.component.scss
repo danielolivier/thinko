@@ -4,6 +4,92 @@
   margin-top: 120px;
   padding: 0 60px;
 
+  mat-card {
+    box-shadow: none !important;
+    border-radius: 10px;
+
+    mat-card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: $color-gray-dark-text;
+    }
+
+    mat-card-content {
+      padding: 0 16px;
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          cursor: pointer;
+          margin-right: 20px;
+
+          &:focus {
+            outline: none;
+          }
+
+          span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+          }
+        }
+
+        .accent {
+          width: 300px;
+          height: 50px;
+
+          border: none;
+          border-radius: 5px;
+          background-color: $color-accent;
+          box-shadow: 0px 4px 0px #c7401b;
+
+          mat-icon {
+            color: $color-primary;
+            margin-right: 10px;
+          }
+
+          span {
+            color: $color-primary;
+          }
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
+        .ghost {
+          height: 50px;
+          padding: 0 20px;
+
+          border: solid 2px $color-accent;
+          border-radius: 5px;
+          background-color: $color-primary;
+
+          mat-icon {
+            color: $color-accent;
+            margin-right: 10px;
+          }
+
+          span {
+            color: $color-accent;
+          }
+
+          &:hover {
+            background-color: rgba(242, 108, 72, 0.1);
+          }
+        }
+      }
+    }
+  }
+
   .syllabus {
     display: flex;
     flex-direction: column;
@@ -24,6 +110,30 @@
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+    }
+  }
+
+  .no-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 28px;
+    color: $color-gray-dark-text;
+
+    mat-icon {
+      margin-left: 20px;
+      margin-bottom: 10px;
+      height: 30px;
+      width: 30px;
+      font-size: 30px;
+      color: $color-accent;
+      transform: rotate(150deg);
     }
   }
 }

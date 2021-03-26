@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from 'libs/ui/src/lib/components/not-found/not-found.component';
 import { RestApiModule } from '@thinko/rest-api';
 import { environment } from '../environments/environment';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 /**
  * Routes config

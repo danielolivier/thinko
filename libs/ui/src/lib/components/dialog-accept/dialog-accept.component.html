@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="button">
-      <button>
+      <button [matTooltip]="'MESSAGE' | transloco" (click)="goToMenu()">
         <mat-icon>play_arrow</mat-icon>
         <span>{{ 'DIALOG.START' | transloco }}</span>
       </button>

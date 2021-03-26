@@ -1,13 +1,17 @@
 @import '/apps/frontend/src/styles/colors';
 
 mat-card {
-  height: 500px;
   width: 670px;
+  height: 500px;
   border-radius: 10px;
+  padding: 10px 0 !important;
   box-shadow: none !important;
 
+  margin: 20px 0;
+
   .header {
-    padding: 10px 0;
+    height: 55px;
+    padding: 10px 20px;
 
     .title {
       font-family: 'Roboto', sans-serif;
@@ -42,7 +46,65 @@ mat-card {
 
   hr {
     border: 0;
+    margin: 0;
     height: 2px;
     background-color: #e0e0e0;
+  }
+
+  .content {
+    height: 445px;
+    overflow: auto;
+
+    .selected {
+      background-color: $color-accent;
+
+      .index,
+      .name {
+        color: $color-primary !important;
+      }
+    }
+
+    .session {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      position: relative;
+      cursor: pointer;
+      padding: 15px 20px;
+
+      .index {
+        position: absolute;
+        left: 0;
+
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        line-height: 28px;
+        color: $color-gray-dark-text;
+
+        margin-left: 15px;
+      }
+
+      .name {
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+        line-height: 28px;
+        color: $color-gray-dark-text;
+
+        margin-left: 35px;
+      }
+
+      mat-icon {
+        cursor: pointer;
+        margin-right: 15px;
+        color: $color-gray-dark-icons;
+      }
+
+      .white {
+        color: $color-primary !important;
+      }
+    }
   }
 }

@@ -20,4 +20,19 @@ mat-card {
     font-weight: 600;
     line-height: 28px;
   }
+
+  .seen {
+    margin-top: 10px;
+
+    span {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      color: $color-gray-dark-text;
+    }
+  }
+
+  .progress {
+    width: 60px;
+    height: 60px;
+  }
 }

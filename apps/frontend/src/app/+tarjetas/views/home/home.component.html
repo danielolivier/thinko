@@ -1,12 +1,51 @@
 <div class="container">
-  <div class="syllabus">
-    <div class="title">
-      <span>{{ 'CARDS.SYLLABUS' | transloco }}</span>
+  <mat-card *ngIf="false">
+    <mat-card-header>
+      <mat-card-title>
+        <span>{{ 'CARDS.CONTINUE' | transloco }}</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        {{ '' }}
+      </div>
+      <div class="buttons">
+        <button class="accent">
+          <mat-icon class="material-icons-round">play_arrow</mat-icon>
+          <span>{{ 'CARDS.ORDERED_PLAY' | transloco }}</span>
+        </button>
+        <button class="ghost">
+          <mat-icon class="material-icons-round">shuffle</mat-icon>
+          <span>{{ 'SHARED.SHUFFLE' | transloco }}</span>
+        </button>
+        <button class="ghost">
+          <mat-icon class="material-icons-round">redo</mat-icon>
+          <span>{{ 'CARDS.NEXT_SESSION' | transloco }}</span>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <ng-container *ngIf="sessions | async; let sessions; else: noDataTemplate">
+    <div class="syllabus">
+      <div class="title">
+        <span>{{ 'CARDS.SYLLABUS' | transloco }}</span>
+      </div>
+      <div class="mini-cards">
+        <ng-container *ngFor="let session of sessions; index as i">
+          <thinko-mini-info-card
+            [title]="i + 1"
+            [sessions]="session"
+            [clickable]="true"
+            (onClick)="goToTrimesterDetail(i + 1)"
+          ></thinko-mini-info-card>
+        </ng-container>
+      </div>
     </div>
-    <div class="mini-cards">
-      <ng-container *ngFor="let obj of [1, 2, 3]">
-        <thinko-mini-info-card [title]="obj"></thinko-mini-info-card>
-      </ng-container>
+  </ng-container>
+  <ng-template #noDataTemplate>
+    <div class="no-data">
+      <p [innerHTML]="'SHARED.NO_DATA' | transloco"></p>
+      <mat-icon class="material-icons-round">undo</mat-icon>
     </div>
-  </div>
+  </ng-template>
 </div>
